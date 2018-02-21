@@ -1,0 +1,321 @@
+\documentclass[
+%8pt, 9pt, 10pt, 11pt, 12pt, 14pt, 17pt, 20pt
+%serif,
+%table, % for table coloring
+%draft,
+%ngerman,
+%handout,	% remove overlays
+compress,
+xcolor=table,
+dvipsnames,
+]{beamer}
+
+\usepackage{tipa}
+%% Encoding, fonts, language
+\input{settings/pdflatex_setup}
+
+\usepackage{etex} 
+\usepackage{graphics}
+\usepackage{subcaption}
+\input{settings/tikz_setup} 
+\input{settings/forest_setup}
+
+\usepackage{url}
+\usepackage{amsmath,amssymb,amsfonts,marvosym}
+\usepackage{ulem}			% to cross out text
+\normalem
+
+\usepackage{ragged2e}
+\let\raggedright=\RaggedRight
+
+\usepackage[utf8]{inputenc} %Este es el paquete para que te muestre bien los caracteres latinos
+\usepackage[useregional]{datetime2} %paquete para la fecha
+\usepackage{linguex}   % must be loaded below \usepackage[T1]{fontenc}
+\AtBeginDocument{
+  \setlength{\Exlabelsep}{0em}		% for linguex examples
+  \setlength{\SubExleftmargin}{1,5em}	% for linguex examples
+  \renewcommand\eachwordone{\sffamily}	% for glossing with linguex
+  \renewcommand\eachwordtwo{\sffamily}	% for glossing with linguex
+  % \setlength{\Extopsep}{1ex}   % vertical margin in linguex examples
+}
+\input{settings/avm_setup}
+
+\input{settings/beamer_setup}
+
+%% Bibliography
+%% BibLaTeX
+\input{settings/biblatex_setup.tex}
+%% BibTeX 
+% \input{settings/natbib_bibtex_setup.tex} 
+% \PassOptionsToPackage{round}{natbib}
+% \renewcommand{\newblock}{}    % to make natbib compatible with beamer
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%    non-essential MACROS     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{myMacros}
+\definecolor{myblue}{rgb}{0,0,0.70}
+\definecolor{myred}{rgb}{0.8,0,0}
+\definecolor{mydarkgreen}{rgb}{0,0.55,0}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title[\arabic{page} ]{Redes de Petri}
+%\subtitle[short]{Subtitle}	
+\author{Luciano Serruya Aloisi}
+\institute[UNPSJB]{Universidad Nacional de la Patagonia San Juan Bosco}
+\date{22 de Febrero del 2018}
+\titlegraphic{\includegraphics[height=3cm]{graphics/logoUnpsjb} 
+}	% Logo on title slide
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SLIDES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+%\frame{\titlepage}
+
+%\frame{
+%\frametitle{Temario}
+  %\tableofcontents
+  %%[pausesections]
+%}
+
+%\AtBeginSection[]
+%{
+%  \begin{frame}<beamer>{Outline}
+%    \tableofcontents[
+%    currentsection
+%    ]
+%  \end{frame}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Introducción}
+    \begin{itemize}
+        \item Qué son y para qué sirven
+        \item{Definición}
+        \item{Marcados y relación de orden}
+        \item{Transiciones habilitadas y disparos}
+        \item{Secuencias de disparos}
+    \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Ejemplo: filósofos comensales}
+    \begin{figure}[h]
+        \includegraphics[scale=0.45]{graphics/dining_philosophers.png}
+        \caption{Filósofos comensales }
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Modelos}
+    \begin{itemize}
+        \item{Autómatas finitos}
+        \item{Actividades paralelas}
+        \item{Computación de flujo de datos}
+        \item{Protocolos de comunicación}
+        \item{Control de sincronización}
+        \item{Productor-Consumidor}
+        \textbf{\item{Lenguajes formales}}
+        \item{Sistemas multiprocesador}
+    \end{itemize}
+    \begin{itemize}
+        \item Concurrencia
+        \item Conflictos
+        \item Confusión
+            \begin{itemize}
+                \item Simétrica
+                \item Asimétrica
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Autómatas finitos}
+    \begin{figure}[h]
+        \includegraphics[scale=0.8]{graphics/af_rp.png}
+        \caption{Autómata finito \citep{Murata:89}}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Paralelismo y concurrencia}
+  \begin{columns}
+    \column{.42\textwidth}
+    \begin{figure}[h]
+        \includegraphics[scale=0.7]{graphics/concurrency_rp.png}
+        \caption{Concurrencia en RP \citep{Murata:89}}
+    \end{figure}
+    \column{.58\textwidth}
+        \begin{figure}[h]
+            \includegraphics[scale=0.7]{graphics/parallel_activities.png}
+            \caption{Sincronización en RP \citep{Murata:89}}
+        \end{figure}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Confusión}
+  \begin{columns}
+    \column{.50\textwidth}
+    \begin{figure}[h]
+        \includegraphics[scale=1]{graphics/symmetric_confusion.png}
+        \caption{Confusión simétrica \citep{Murata:89}}
+    \end{figure}
+    \column{.50\textwidth}
+        \begin{figure}[h]
+            \includegraphics[scale=1]{graphics/asymmetric_confusion.png}
+            \caption{Confusión asimétrica \citep{Murata:89}}
+        \end{figure}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Métodos de análisis}
+    \begin{itemize}
+        \item Árbol de cobertura
+        \item Matriz de incidencia
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Árbol de cobertura - Marcados frontera}
+    \begin{itemize}
+        \item Marcados muertos
+        \item Nodos duplicados
+        \item Marcados que sólo se diferencian del anterior por tener un número distinto de \textit{tókens} en alguna plaza y que habilita el mismo conjunto de transiciones. Se remplaza la plaza con la cantidad de tókens distinta por el símbolo $\omega$
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Árbol de cobertura}
+    \begin{figure}[h]
+        \includegraphics[scale=0.45]{graphics/reachability_tree.png}
+        \caption{Árbol de cobertura \citep{Murata:89}}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Matriz de incidencia}
+
+    Sea una RP = (P, T, I, O) con \textit{n} plazas y \textit{m} transiciones, se define la \textbf{matriz de incidencia previa} como: 
+    \begin{equation}
+        C^-(j, i) = I(p_i, t_j)
+    \end{equation}
+    Se define la \textbf{matriz de incidencia posterior} como:
+    \begin{equation}
+        C^+(j, i) = O(t_j, p_i)
+    \end{equation}
+    Se define la \textbf{matriz de incidencia} como:
+    \begin{equation}
+        C = C^+ - C^-
+    \end{equation}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Representación matricial}
+
+    Una transición $t_j$ se define por un vector $e_j$ de dimensión \textit{m} de componentes:
+
+        \[ e_j(i) =
+          \begin{cases}
+            1       & \text{si } i = j\\
+            0       & \text{si } i \neq j
+          \end{cases}
+        \]
+    Una transición $t_j$ está habilitada en un marcado \textit{M} si
+    \begin{equation}
+        M \geq e_j \bullet C^-
+    \end{equation}
+    El resultado del disparo de la transición $t_j$ a partir del estado \textit{M} es:
+    \begin{equation}
+        M' = M + e_j \bullet C
+    \end{equation}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Propiedades de comportamiento}
+    \begin{itemize}
+        \item{Alcanzabilidad}
+        \item{Límite}
+            \begin{itemize}
+                \item{Seguridad}
+            \end{itemize}
+        \item{Vitalidad}
+        \item{Estado base}
+        \item{Cobertura}
+        \item{Persistencia}
+        \item{Justicia}
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Propiedades}
+    \subsection{Alcanzabilidad}
+    \subsection{Límite}
+    \subsubsection{Seguridad}
+    \subsection{Vitalidad}
+    \subsection{Estado base}
+    \subsection{Cobertura}
+    \subsection{Persistencia}
+    \subsection{Justicia}
+\section{Métodos de análisis}
+    \subsection{Árbol de cobertura}
+    \subsection{Matriz de incidencia}
+\section{Lenguajes formales y RP}
+    \subsection{Clases}
+    \subsection{Expresividad}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}
+  %\frametitle{Temario}
+
+%% \input{README.tex}
+  
+%\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{examples/beamer-examples.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{frame}[plain,allowframebreaks]
+\frametitle{Referencias}
+
+\insertBib
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
