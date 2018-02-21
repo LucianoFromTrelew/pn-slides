@@ -285,6 +285,71 @@ dvipsnames,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Definición de los lenguajes RP}
+    Para que una RP pueda ser reconocedora de lenguajes, se deben definir tres conceptos más:
+    \begin{itemize}
+        \item{Estado inicial}
+        \item{Etiquetado $ \sigma: T \mapsto \Sigma$}
+        \item Estado final
+    \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Conjunto de estados finales}
+    Según cómo se defina el conjunto de estados finales de una RP reconocedora, el lenguaje reconocido será distinto \citep{Peterson:81}
+    \begin{itemize}
+        \item{Tipo-L = $\{\sigma(\beta) \in \Sigma^*, \quad \beta \in T^* \text{ y }\delta(M_0, \beta) \in F\}$}
+        \item{Tipo-G = $\{\sigma(\beta) \in \Sigma^*, \quad \beta \in T^* \text{ y } \exists M_f \in F \text{ tal que } \delta(M_0, \beta) \geq M_f\}$}
+        \item{Tipo-T = $\{\sigma(\beta) \in \Sigma^*, \quad \beta \in T^* \text{ y } \delta(M_0, \beta) \text{ está definido } \forall t_j \in T, \quad \delta(\delta(M_0, \beta), t_j) \text{ no está definido } \}$}
+        \item{Tipo-P = $\{\sigma(\beta) \in \Sigma^*, \quad \beta \in T^* \text{ y } \delta(M_0, \beta) \text{ está definido }\}$}
+    \end{itemize}
+
+    \hfill \break 
+    $\beta$ es una secuencia de transiciones.
+
+    $\delta: M \times \beta \mapsto M$
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Clases de lenguajes RP}
+    \begin{figure}[h]
+        \includegraphics[scale=0.45]{graphics/rp_languages.png}
+        \caption{12 clases de lenguajes reconocidos por Redes de Petri \citep{Peterson:81}}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Expresividad}
+    \begin{figure}[h]
+        \includegraphics[scale=0.7]{graphics/rp_context_free.png}
+        \caption{Red de petri reconocedora del lenguajes libre de contexto \citep{Peterson:81}}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Expresividad}
+    \begin{figure}[h]
+        \includegraphics[scale=0.7]{graphics/rp_context_sensitive.png}
+        \caption{Red de petri reconocedora del lenguajes sensibles al contexto \citep{Peterson:81}}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Expresividad}
+    \begin{figure}[h]
+        \includegraphics[scale=0.6]{graphics/rp_chomsky.png}
+        \caption{Lenguajes de RP en la clasificación de Chomsky \citep{Augusto:95}}
+    \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{frame}
   %\frametitle{Temario}
