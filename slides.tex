@@ -1,3 +1,4 @@
+\batchmode
 \documentclass[
 %8pt, 9pt, 10pt, 11pt, 12pt, 14pt, 17pt, 20pt
 %serif,
@@ -28,8 +29,9 @@ dvipsnames,
 \usepackage{ragged2e}
 \let\raggedright=\RaggedRight
 
-\usepackage[utf8]{inputenc} %Este es el paquete para que te muestre bien los caracteres latinos
-\usepackage[useregional]{datetime2} %paquete para la fecha
+%\usepackage[utf8]{inputenc} %Este es el paquete para que te muestre bien los caracteres latinos
+%\usepackage[useregional]{datetime2} %paquete para la fecha
+
 \usepackage{linguex}   % must be loaded below \usepackage[T1]{fontenc}
 \AtBeginDocument{
   \setlength{\Exlabelsep}{0em}		% for linguex examples
@@ -66,13 +68,22 @@ dvipsnames,
 % HEADER
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title[\arabic{page} ]{Redes de Petri}
-%\subtitle[short]{Subtitle}	
+\title[\arabic{page} ]{Fundamentos Teóricos de Informática}
+\subtitle[RP]{Redes de Petri}	
 \author{Luciano Serruya Aloisi}
 \institute[UNPSJB]{Universidad Nacional de la Patagonia San Juan Bosco}
-\date{22 de Febrero del 2018}
-\titlegraphic{\includegraphics[height=3cm]{graphics/logoUnpsjb} 
-}	% Logo on title slide
+\date{
+    Cátedra: \endgraf 
+    Dra. Celia Cintas\endgraf 
+    Lic. Pablo Navarro\endgraf 
+    Lic. Samuel Almonacid\endgraf
+    \medskip
+    \medskip 
+    22 de Febrero del 2018
+}
+
+\logo{\pgfimage[width=0.8cm,height=1cm]{graphics/logoUnpsjb}}			% Logo on all slides (pdf,png,jpg,eps)
+%\titlegraphic{\includegraphics[height=3cm]{graphics/logoUnpsjb}}	% Logo on title slide
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,7 +93,9 @@ dvipsnames,
 \begin{document}
 
 \begin{frame}[plain]
-  \titlepage
+    \begin{titlepage}
+        
+    \end{titlepage}
 \end{frame}
 
 %\frame{\titlepage}
@@ -117,7 +130,7 @@ dvipsnames,
 \begin{frame}{Ejemplo: filósofos comensales}
     \begin{figure}[h]
         \includegraphics[scale=0.45]{graphics/dining_philosophers.png}
-        \caption{Filósofos comensales }
+        \caption{Filósofos comensales \citep{Labri}}
     \end{figure}
 \end{frame}
 
