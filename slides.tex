@@ -223,10 +223,18 @@ dvipsnames,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Árbol de cobertura}
+  \begin{columns}
+    \column{.50\textwidth}
     \begin{figure}[h]
-        \includegraphics[scale=0.45]{graphics/reachability_tree.png}
-        \caption{Árbol de cobertura \citep{Murata:89}}
+        \includegraphics[scale=0.3]{graphics/rp_inifite.png}
+        \caption{RP con infinitos marcados \citep{Murata:89}}
     \end{figure}
+    \column{.50\textwidth}
+        \begin{figure}[h]
+            \includegraphics[scale=0.35]{graphics/reachability_tree.png}
+            \caption{Árbol de cobertura \citep{Murata:89}}
+        \end{figure}
+  \end{columns}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -235,11 +243,11 @@ dvipsnames,
 
     Sea una RP = (P, T, I, O) con \textit{n} plazas y \textit{m} transiciones, se define la \textbf{matriz de incidencia previa} como: 
     \begin{equation}
-        C^-(j, i) = I(p_i, t_j), \quad 1 \leq i \leq n, \quad 1 \leq j \leq m  
+        C^-(j, i) = I(p_i, t_j), \quad 1 \leq j \leq m, \quad 1 \leq i \leq n  
     \end{equation}
     Se define la \textbf{matriz de incidencia posterior} como:
     \begin{equation}
-        C^+(j, i) = O(t_j, p_i), \quad 1 \leq i \leq n, \quad 1 \leq j \leq m  
+        C^+(j, i) = O(t_j, p_i), \quad 1 \leq j \leq m, \quad 1 \leq i \leq n  
     \end{equation}
     Se define la \textbf{matriz de incidencia} como:
     \begin{equation}
@@ -337,6 +345,22 @@ dvipsnames,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Expresividad}
+  \begin{columns}
+    \column{.40\textwidth}
+    \begin{figure}[h]
+        \includegraphics[scale=0.45]{graphics/rp_af.png}
+        \caption{Máquina de estado que computa el complemento a dos de un número binario \citep{Peterson:81}}
+    \end{figure}
+    \column{.60\textwidth}
+        \begin{figure}[h]
+            \includegraphics[scale=0.3]{graphics/rp_af2.png}
+            \caption{RP equivalente a la máquina de estados\citep{Peterson:81}}
+        \end{figure}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Expresividad}
     \begin{figure}[h]
         \includegraphics[scale=0.7]{graphics/rp_context_free.png}
         \caption{Red de petri reconocedora del lenguajes libre de contexto \citep{Peterson:81}}
@@ -361,15 +385,6 @@ dvipsnames,
     \end{figure}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{frame}
-  %\frametitle{Temario}
-
-%% \input{README.tex}
-  
-%\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\input{examples/beamer-examples.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -377,6 +392,8 @@ dvipsnames,
 \frametitle{Referencias}
 
 \insertBib
+
+Presentación realizada con el siguiente template: \url{https://www.overleaf.com/13923686hnxdtdpgxfrf#/53973373/}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
